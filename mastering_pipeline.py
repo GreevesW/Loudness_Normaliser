@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 INPUT_FILE = "recordings/my_recording.wav"
 data, rate = librosa.load(INPUT_FILE, sr=None)
 
-audio_segment = pydub.AudioSegment.from_file(INPUT_FILE)  # MP3 or WAV
+audio_segment = pydub.AudioSegment.from_file(INPUT_FILE)
 audio_segment.export("recordings/input.wav", format="wav")
 
 meter = pyln.Meter(rate)
@@ -57,6 +57,7 @@ compressed = pydub.AudioSegment.from_wav("recordings/mastered_output.wav")
 compressed_samples = np.array(compressed.get_array_of_samples(), dtype=np.float32)
 
 compressed_samples /= 2**15
+# Divided in order to be plotted on the same graph
 
 plt.figure(figsize=(12,4))
 plt.plot(n_audio, alpha=0.5, label="Normalised")
