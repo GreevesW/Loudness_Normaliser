@@ -29,6 +29,10 @@ A version of the model using TTS is also included, but commented out.
    pip install matplotlib
    ```
 
+##Dependencies
+
+ffmpeg
+
 ## Usage
 
 Place audio recording in recordings folder. Rename the input to my_recording.wav
